@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html ng-app="basicCntrl"> 
+<head> 
+	<title>Angular</title> 
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/cnt.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head> 
+<body>
+	<div class="row">
+		<div ng-controller="DataCntrl">
+			<div class="col-sm-4">
+			  <input type="text" ng-model="que"> {{que}}
+			</div>
+			<div class="col-sm-4">
+			  <ul>
+			    <li ng-repeat="phone in phones | filter : que">
+			      <span>{{phone.name}}</span>
+			      <p>{{phone.snippet}}</p>
+			    </li>
+			  </ul>
+			</div>
+			<div class="col-sm-1">
+				<span ng-bind="person.firstName"></span>
+			</div>
+			<div class="col-sm-1">
+				<span ng-bind="person.lastName"></span>
+			</div>			
+		</div>		
+	</div>
+	
+	<div class="row">
+		<div ng-controller="BorderCntrl">
+			<div class="col-sm-1">
+				<span ng-bind="person.firstName"></span>
+			</div>
+			<div class="col-sm-1">
+				<span ng-bind="person.lastName"></span>
+			</div>	
+		</div>
+	
+	</div>
+	
+	
+</body>
+</html>
